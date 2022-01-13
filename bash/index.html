@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SysAdmin's ToolBox</title>
+<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+</br>
+<div class="row">
+  <div class="col-sm"><h2>List of Tools</h2></div>
+</div></br>
+<div id="toolList" class="list-group">
+	<input id="inpSearch" onkeyup="searchFunction()" class="form-control" type="text" placeholder="Search">
+	<a href="/bash/monitor_context_switches.html" class="list-group-item list-group-item-action"><h5>Monitor Context Switches of a given pid</h5></a>
+</div>
+<script>
+function searchFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("inpSearch");
+  filter = input.value.toUpperCase();
+  divtools = document.getElementById("toolList");
+  ahref = divtools.getElementsByTagName("a");
+  for (i = 0; i < ahref.length; i++) {
+    hf = ahref[i].getElementsByTagName("h5")[0];
+    if (hf.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      ahref[i].style.display = "";
+    } else {
+      ahref[i].style.display = "none";
+    }
+  }
+}
+</script>
+</body>
+</html>
