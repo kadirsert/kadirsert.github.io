@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>NetApp Storage LUN Serial Number to WWID Converter</title>
+<title>Generate BASH Command</title>
 
 <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" rel="stylesheet">
 <script type="text/javascript">
@@ -23,30 +23,18 @@ function show_wwid() {
 </br>
 <div class="container-fluid">
 <div class="row">
-  <div class="col-sm"><h2>NetApp Storage LUN Serial Number to WWID Converter</h2></div>
+  <div class="col-sm"><h2>Monitor Context Switches of a given pid</h2></div>
 </div></br>
 <div class="input-group input-group-lg">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-lg">Serial Number:</span>
+    <span class="input-group-text" id="inputGroup-sizing-lg">Pid Number:</span>
   </div>
-  <input type="text" maxlength=12 name="serial_number" class="form-control" aria-label="Serial" aria-describedby="inputGroup-sizing-sm">
-</div></br>
-<div class="input-group input-group-lg">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-lg">WWID 7-Mode:</span>
-  </div>
-  <input type="text" name="ww7m" readonly class="form-control" aria-label="ww7m" aria-describedby="inputGroup-sizing-sm">
-</div>
-<div class="input-group input-group-lg">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-lg">WWID C-Mode:</span>
-  </div>
-  <input type="text" name="wwcm" readonly class="form-control" aria-label="wwcm" aria-describedby="inputGroup-sizing-sm">
+  <input type="text" maxlength=12 name="pid_number" class="form-control" aria-label="Pid" aria-describedby="inputGroup-sizing-sm">
 </div></br>
 <div class="row">
-  <div class="col-sm"><input type="button" class="btn btn-info btn-lg" value="Show WWID" onclick="javascript:show_wwid();"></div>
+  <div class="col-sm"><input type="button" class="btn btn-info btn-lg" value="Show Command" onclick="javascript:show_wwid();"></div>
 </div></br></br>
-<a href="/" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"></span> <h5>Tools Home</h5></a>
+<a href="/bash" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"></span> <h5>Back</h5></a>
 </div>
 
 </body>
