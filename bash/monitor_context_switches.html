@@ -7,14 +7,8 @@
 <script type="text/javascript">
 function show_cmd() {
     var pid_num = document.getElementsByName("pid_number")[0].value ;
-
-    var wwid = "360a98000" ;
-    for (var i=0; i < sn.length; i++) { wwid = wwid + sn.charCodeAt(i).toString(16) ; } ;
-    document.getElementsByName("ww7m")[0].value = wwid ;
-
-    var wwid = "3600a0980" ;
-    for (var i=0; i < sn.length; i++) { wwid = wwid + sn.charCodeAt(i).toString(16) ; } ;
-    document.getElementsByName("wwcm")[0].value = wwid ;
+    const cmd_str = 'watch -n.5 grep ctxt /proc/' + pid_num + '/status';
+    document.getElementsByName("cmd_text")[0].value = cmd_str ;
 }
 </script>
 </head>
@@ -30,6 +24,12 @@ function show_cmd() {
     <span class="input-group-text" id="inputGroup-sizing-lg">Pid Number:</span>
   </div>
   <input type="text" maxlength=12 name="pid_number" class="form-control" aria-label="Pid" aria-describedby="inputGroup-sizing-sm">
+</div></br>
+<div class="input-group input-group-lg">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">BASH Command:</span>
+  </div>
+  <input type="text" name="cmd_text" readonly class="form-control" aria-label="Command" aria-describedby="inputGroup-sizing-sm">
 </div></br>
 <div class="row">
   <div class="col-sm"><input type="button" class="btn btn-info btn-lg" value="Show Command" onclick="javascript:show_cmd();"></div>
