@@ -7,10 +7,10 @@
 <script type="text/javascript">
 function show_cmd() {
     var ip_ad = document.getElementsByName("ip_addr")[0].value ;
-    if (isNaN(ip_ad)) {
-      cmd_str = "IP must be number";
+    if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(ip_ad)) {
+    cmd_str = 'dig +noall +answer -x ' + ip_ad;
     } else {
-        cmd_str = 'dig +noall +answer -x ' + ip_ad;
+        cmd_str = "Input must be an IP address";
     }
     document.getElementsByName("cmd_text")[0].value = cmd_str ;
 }
