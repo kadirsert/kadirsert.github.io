@@ -25,9 +25,14 @@ function copy_to_clip() {
 
     copy_text.select();
     copy_text.setSelectionRange(0, 99999); /* For mobile devices */
-
-    navigator.clipboard.writeText(copy_text.value);
-    alert("Copied to clipboard.");
+    navigator.clipboard
+        .writeText(copy_text.value)
+        .then(() => {
+            alert("successfully copied");
+        })
+        .catch(() => {
+            alert("something went wrong");
+        });
 }
 </script>
 </head>
