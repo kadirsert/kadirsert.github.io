@@ -16,7 +16,7 @@ function show_cmd() {
     var email = document.getElementsByName("email")[0].value;
     var key_name = cname.split(".")[0] + '.key';
     var csr_name = cname.split(".")[0] + '.csr';
-    cmd_str = 'openssl req -new -nodes -sha256 -newkey rsa:2048 -keyout ' + key_name + ' -out ' + csr_name  ;
+    cmd_str = 'openssl req -new -nodes -sha256 -newkey rsa:2048 -keyout ' + key_name + ' -out ' + csr_name;
     document.getElementsByName("cmd_text")[0].value = cmd_str ;
 }
 </script>
