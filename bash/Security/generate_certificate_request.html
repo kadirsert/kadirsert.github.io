@@ -21,29 +21,32 @@ function show_cmd() {
 <div class="row">
   <div class="col-sm"><h2>Generate SSL CSR and Key Noninteractively</h2></div>
 </div></br>
-<div class="input-group input-group-lg">
-    
+
+<div class="input-group input-group-lg">    
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-lg">Country:</span>
   </div>
-  <input type="text" maxlength=40 name="country" class="form-control" aria-label="country" aria-describedby="inputGroup-sizing-sm"></br>
- 
+  <input type="text" maxlength=40 name="country" class="form-control" aria-label="country" aria-describedby="inputGroup-sizing-sm">    
+</div></br>
+
+<div class="input-group input-group-lg">
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-lg">State or Province:</span>
   </div>
   <input type="text" maxlength=40 name="province" class="form-control" aria-label="province" aria-describedby="inputGroup-sizing-sm">
-    
 </div></br>
+
 <div class="input-group input-group-lg">
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-lg">BASH Command:</span>
   </div>
   <input type="text" name="cmd_text" readonly class="form-control" aria-label="Command" aria-describedby="inputGroup-sizing-sm">
 </div></br>
+
 <div class="row">
   <div class="col-sm"><input type="button" class="btn btn-info btn-lg" value="Show Command" onclick="javascript:show_cmd();"></div>
 </div></br></br>
-<a href="/bash/Strings" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"></span> <h5>Back</h5></a>
+<a href="/bash/Security" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"></span> <h5>Back</h5></a>
 </div>
 
 </body>
