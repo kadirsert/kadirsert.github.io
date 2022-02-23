@@ -11,6 +11,9 @@ function show_cmd() {
     var province = document.getElementsByName("province")[0].value ;
     var locality = document.getElementsByName("locality")[0].value ;
     var organization = document.getElementsByName("organization")[0].value ;
+    var orgunit = document.getElementsByName("orgunit")[0].value ;
+    var cname = document.getElementsByName("cname")[0].value ;
+    var email = document.getElementsByName("email")[0].value ;
     cmd_str = 'openssl req -nodes -newkey rsa:2048 ';
     document.getElementsByName("cmd_text")[0].value = cmd_str ;
 }
@@ -50,6 +53,27 @@ function show_cmd() {
     <span class="input-group-text" id="inputGroup-sizing-lg">Organization Name (eg, company) [Internet Widgits Pty Ltd]:</span>
   </div>
   <input type="text" maxlength=60 name="organization" class="form-control" aria-label="organization" aria-describedby="inputGroup-sizing-sm">
+</div></br>
+
+<div class="input-group input-group-lg">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">Organizational Unit Name (eg, section) []:</span>
+  </div>
+  <input type="text" maxlength=60 name="orgunit" class="form-control" aria-label="orgunit" aria-describedby="inputGroup-sizing-sm">
+</div></br>
+
+<div class="input-group input-group-lg">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">Common Name (e.g. server FQDN or YOUR name) []:</span>
+  </div>
+  <input type="text" maxlength=60 name="cname" class="form-control" aria-label="cname" aria-describedby="inputGroup-sizing-sm">
+</div></br>
+
+<div class="input-group input-group-lg">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">Email Address []:</span>
+  </div>
+  <input type="text" maxlength=60 name="email" class="form-control" aria-label="email" aria-describedby="inputGroup-sizing-sm">
 </div></br>
 
 <div class="input-group input-group-lg">
