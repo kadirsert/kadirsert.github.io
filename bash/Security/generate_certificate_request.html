@@ -19,6 +19,16 @@ function show_cmd() {
     cmd_str = 'openssl req -new -nodes -sha256 -newkey rsa:2048 -keyout ' + key_name + ' -out ' + csr_name + ' -subj "/emailAddress=' + email + '/CN=' + cname + '/O=' + organization + '/OU=' + orgunit + '/C=' + country + '/ST=' + province + '/L=' + locality + '"';
     document.getElementsByName("cmd_text")[0].value = cmd_str ;
 }
+    
+function copy_to_clip() {
+    var copy_text = document.getElementById("cmd_text");
+
+    copy_text.select();
+    copy_text.setSelectionRange(0, 99999); /* For mobile devices */
+
+    navigator.clipboard.writeText(copy_text.value);
+    alert("Command copied to clipboard: " + copy_text.value);
+}
 </script>
 </head>
 <body>
@@ -82,11 +92,12 @@ function show_cmd() {
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-lg">BASH Command:</span>
   </div>
-  <input type="text" name="cmd_text" readonly class="form-control" aria-label="Command" aria-describedby="inputGroup-sizing-sm">
+  <input type="text" name="cmd_text" id="cmd_text" readonly class="form-control" aria-label="Command" aria-describedby="inputGroup-sizing-sm">
 </div></br>
 
 <div class="row">
   <div class="col-sm"><input type="button" class="btn btn-info btn-lg" value="Show Command" onclick="javascript:show_cmd();"></div>
+  <div class="col-sm"><input type="button" class="btn btn-info btn-lg" value="Copy Command to Clipboard" onclick="javascript:copy_to_clip();"></div>
 </div></br></br>
 <a href="/bash/Security" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"></span> <h5>Back</h5></a>
 </div>
