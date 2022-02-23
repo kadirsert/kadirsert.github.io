@@ -9,6 +9,8 @@
 function show_cmd() {
     var country = document.getElementsByName("country")[0].value ;
     var province = document.getElementsByName("province")[0].value ;
+    var locality = document.getElementsByName("locality")[0].value ;
+    var organization = document.getElementsByName("organization")[0].value ;
     cmd_str = 'openssl req -nodes -newkey rsa:2048 ';
     document.getElementsByName("cmd_text")[0].value = cmd_str ;
 }
@@ -24,16 +26,30 @@ function show_cmd() {
 
 <div class="input-group input-group-lg">    
   <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-lg">Country:</span>
+    <span class="input-group-text" id="inputGroup-sizing-lg">Country Name (2 letter code) [AU]:</span>
   </div>
-  <input type="text" maxlength=40 name="country" class="form-control" aria-label="country" aria-describedby="inputGroup-sizing-sm">    
+  <input type="text" maxlength=2 name="country" class="form-control" aria-label="country" aria-describedby="inputGroup-sizing-sm">    
 </div></br>
 
 <div class="input-group input-group-lg">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-lg">State or Province:</span>
+    <span class="input-group-text" id="inputGroup-sizing-lg">State or Province Name (full name) [Some-State]:</span>
   </div>
   <input type="text" maxlength=40 name="province" class="form-control" aria-label="province" aria-describedby="inputGroup-sizing-sm">
+</div></br>
+
+<div class="input-group input-group-lg">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">Locality Name (eg, city) []:</span>
+  </div>
+  <input type="text" maxlength=40 name="locality" class="form-control" aria-label="locality" aria-describedby="inputGroup-sizing-sm">
+</div></br>
+
+<div class="input-group input-group-lg">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">Organization Name (eg, company) [Internet Widgits Pty Ltd]:</span>
+  </div>
+  <input type="text" maxlength=60 name="organization" class="form-control" aria-label="organization" aria-describedby="inputGroup-sizing-sm">
 </div></br>
 
 <div class="input-group input-group-lg">
