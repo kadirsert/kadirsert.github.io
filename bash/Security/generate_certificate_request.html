@@ -8,6 +8,7 @@
 <script type="text/javascript">
 function show_cmd() {
     var country = document.getElementsByName("country")[0].value ;
+    var province = document.getElementsByName("province")[0].value ;
     cmd_str = 'openssl req -nodes -newkey rsa:2048 ';
     document.getElementsByName("cmd_text")[0].value = cmd_str ;
 }
@@ -25,6 +26,12 @@ function show_cmd() {
     <span class="input-group-text" id="inputGroup-sizing-lg">Country:</span>
   </div>
   <input type="text" maxlength=40 name="country" class="form-control" aria-label="country" aria-describedby="inputGroup-sizing-sm">
+</div></br>
+<div class="input-group input-group-lg">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">State or Province:</span>
+  </div>
+  <input type="text" maxlength=40 name="province" class="form-control" aria-label="province" aria-describedby="inputGroup-sizing-sm">
 </div></br>
 <div class="input-group input-group-lg">
   <div class="input-group-prepend">
