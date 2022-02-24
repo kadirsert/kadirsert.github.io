@@ -11,7 +11,7 @@ function temp_alert(msg,duration) {
     var el = document.createElement("div");
     document.getElementById("div_cmd_text").appendChild(el);
         
-    el.setAttribute("style","position:static;background-color:#00C851;");
+    el.setAttribute("style","position:relative;background-color:#00C851;width:50%;");
     el.innerHTML = msg;
     setTimeout(function() {
         el.parentNode.removeChild(el);
@@ -108,11 +108,12 @@ function show_cmd() {
   <input type="text" maxlength=60 name="email" class="form-control" aria-label="email" aria-describedby="inputGroup-sizing-sm">
 </div></br>
 
-<div id="div_cmd_text" class="input-group input-group-lg" style="background-color: #b4deb1;">
+<div class="input-group input-group-lg" style="background-color: #b4deb1;">
   <div class="input-group-prepend" style="background-color: #b4deb1;">
     <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">BASH Command:</span>
   </div>
   <input class="form-control" style="background-color: #b4deb1;" type="text" name="cmd_text" id="cmd_text" readonly aria-label="Command" aria-describedby="inputGroup-sizing-sm">
+  <div id="div_cmd_text"></div>
 </div></br>
 
 <div class="row">
