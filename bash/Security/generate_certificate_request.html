@@ -8,9 +8,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6710021794174728" crossorigin="anonymous"></script>
 <script type="text/javascript">
 function temp_alert(msg,duration) {
-    var el = document.createElement("div");
-    el.setAttribute("style","position:absolute;background-color:#00C851;top:10px;right:10px;width:25%;border:solid 1px blue;");
-    document.getElementById("div_cmd_text").appendChild(el);
+    var el = document.createElement("div"); 
+    el.setAttribute("style","position:absolute;background-color:#00C851;bottom:10px;left:10px;width:25%;border:solid 1px blue;");
+    document.getElementById('div_cmd_text').appendChild(el);
     el.innerHTML = msg;
     setTimeout(function() {
         el.parentNode.removeChild(el);
@@ -107,8 +107,7 @@ function show_cmd() {
   <input type="text" maxlength=60 name="email" class="form-control" aria-label="email" aria-describedby="inputGroup-sizing-sm">
 </div></br>
 
-<div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
-  <div id="div_cmd_text" style="background-color: #b4deb1; position: relative; border: solid 1px red;"></div>
+<div id="div_cmd_text" class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
   <div class="input-group-prepend" style="background-color: #b4deb1;">
     <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">BASH Command:</span>
   </div>
