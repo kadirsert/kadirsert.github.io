@@ -9,8 +9,8 @@
 <script type="text/javascript">
 function temp_alert(msg,duration) {
     var el = document.createElement("div");
-    document.getElementById("cmd_text").appendChild(el);
-    el.setAttribute("style","position:absolute;top:40%;left:20%;background-color:green;");
+    document.getElementById("div_cmd_text").appendChild(el);
+    el.setAttribute("style","position:relative;background-color:green;");
     el.innerHTML = msg;
     setTimeout(function() {
         el.parentNode.removeChild(el);
@@ -107,7 +107,7 @@ function show_cmd() {
   <input type="text" maxlength=60 name="email" class="form-control" aria-label="email" aria-describedby="inputGroup-sizing-sm">
 </div></br>
 
-<div class="input-group input-group-lg" style="background-color: #b4deb1;">
+<div class="input-group input-group-lg" id="div_cmd_text" style="background-color: #b4deb1;">
   <div class="input-group-prepend" style="background-color: #b4deb1;">
     <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">BASH Command:</span>
   </div>
