@@ -10,7 +10,7 @@
 function temp_alert(msg,duration) {
     var el = document.createElement("div");
     document.getElementById("div_cmd_text").appendChild(el);
-    el.setAttribute("style","position:relative;background-color:green;");
+    el.setAttribute("style","position:relative;background-color:#00C851;");
     el.innerHTML = msg;
     setTimeout(function() {
         el.parentNode.removeChild(el);
@@ -26,10 +26,10 @@ function copy_to_clip() {
     navigator.clipboard
         .writeText(copy_text.value)
         .then(() => {
-            temp_alert("successfully copied",1000);
+            temp_alert("successfully copied",1500);
         })
         .catch(() => {
-            temp_alert("something went wrong",1000);
+            temp_alert("something went wrong",1500);
         });
 }
 </script>
@@ -107,8 +107,8 @@ function show_cmd() {
   <input type="text" maxlength=60 name="email" class="form-control" aria-label="email" aria-describedby="inputGroup-sizing-sm">
 </div></br>
 
-<div class="input-group input-group-lg" id="div_cmd_text" style="background-color: #b4deb1;">
-  <div class="input-group-prepend" style="background-color: #b4deb1;">
+<div class="input-group input-group-lg" style="background-color: #b4deb1;">
+  <div id="div_cmd_text" class="input-group-prepend" style="background-color: #b4deb1;">
     <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">BASH Command:</span>
   </div>
   <input class="form-control" style="background-color: #b4deb1;" type="text" name="cmd_text" id="cmd_text" readonly aria-label="Command" aria-describedby="inputGroup-sizing-sm">
