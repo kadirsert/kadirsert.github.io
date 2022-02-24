@@ -9,7 +9,8 @@
 <script type="text/javascript">
 function temp_alert(msg,duration) {
     var el = document.createElement("div");
-    el.setAttribute("style","position:absolute;top:40%;left:20%;background-color:white;");
+    document.getElementById("cmd_text").appendChild(el);
+    el.setAttribute("style","position:absolute;top:40%;left:20%;background-color:green;");
     el.innerHTML = msg;
     setTimeout(function() {
         el.parentNode.removeChild(el);
