@@ -7,6 +7,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6710021794174728" crossorigin="anonymous"></script>
 <script type="text/javascript">
+function temp_alert(msg,duration) {
+    var el = document.createElement("div");
+    el.setAttribute("style","position:absolute;top:40%;left:20%;background-color:white;");
+    el.innerHTML = msg;
+    setTimeout(function() {
+        el.parentNode.removeChild(el);
+    },duration);
+    document.body.appendChild(el);
+}
+    
 function copy_to_clip() {
     var copy_text = document.getElementById("cmd_text");
 
@@ -15,10 +25,10 @@ function copy_to_clip() {
     navigator.clipboard
         .writeText(copy_text.value)
         .then(() => {
-            alert("successfully copied");
+            temp_alert("successfully copied",1000);
         })
         .catch(() => {
-            alert("something went wrong");
+            temp_alert("something went wrong",1000);
         });
 }
 </script>
