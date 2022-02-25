@@ -54,12 +54,11 @@ function show_cmd() {
   </div>
   <input type="text" maxlength=80 name="file_path" class="form-control" aria-label="path" aria-describedby="inputGroup-sizing-sm">
 </div></br>
-<div class="input-group input-group-lg">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-lg">BASH Command:</span>
-  </div>
-  <input type="text" name="cmd_text" readonly class="form-control" aria-label="Command" aria-describedby="inputGroup-sizing-sm">
+
+<div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
+  <input class="form-control" style="background-color: #b4deb1;" type="text" name="cmd_text" id="cmd_text" readonly aria-label="Command" aria-describedby="inputGroup-sizing-sm">
 </div></br>
+
 <div class="row">
   <div class="col-sm">
     <input type="button" class="btn btn-info btn-lg" data-toggle="tooltip" data-placement="bottom" title="Show Command" value="Show" onclick="javascript:show_cmd();">
