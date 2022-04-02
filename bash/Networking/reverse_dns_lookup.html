@@ -8,32 +8,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6710021794174728" crossorigin="anonymous"></script>
 <script src="/js/common.js"></script>
-<script type="text/javascript">
-function temp_alert(msg,duration) {
-    var el = document.createElement("div");
-    el.setAttribute("style","position:absolute;top:0;bottom:0;left:0;right:0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;");
-    el.innerHTML = msg;
-    setTimeout(function() {
-        el.parentNode.removeChild(el);
-    },duration);
-    document.body.appendChild(el);
-}
 
-function copy_to_clip() {
-    var copy_text = document.getElementById("cmd_text");
-
-    copy_text.select();
-    copy_text.setSelectionRange(0, 99999); /* For mobile devices */
-    navigator.clipboard
-        .writeText(copy_text.value)
-        .then(() => {
-            temp_alert("successfully copied",1500);
-        })
-        .catch(() => {
-            temp_alert("something went wrong",1500);
-        });
-}
-</script>
 <script type="text/javascript">
 function show_cmd() {
     var ip_ad = document.getElementsByName("ip_addr")[0].value ;
