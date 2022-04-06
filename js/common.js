@@ -1,5 +1,23 @@
+function searchFunction() {
+  var input, filter, ul, li, a, i;
+
+  input = document.getElementById("inpSearch");
+  filter = input.value.toUpperCase();
+  divtools = document.getElementById("toolList");
+  ahref = divtools.getElementsByTagName("a");
+  for (i = 0; i < ahref.length; i++) {
+    hf = ahref[i].getElementsByTagName("h5")[0];
+    if (hf.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      ahref[i].style.display = "";
+    } else {
+      ahref[i].style.display = "none";
+    }
+  }
+}
+
 function temp_alert(msg,duration) {
   var el = document.createElement("div");
+  
   el.setAttribute("style","position:absolute;top:0;bottom:0;left:0;right:0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;");
   el.innerHTML = msg;
   setTimeout(function() {
