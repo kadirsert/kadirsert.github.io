@@ -11,17 +11,17 @@
 
 <script type="text/javascript">
 function show_cmd() {
-    var country = document.getElementsByName("country")[0].value;
-    var province = document.getElementsByName("province")[0].value;
-    var locality = document.getElementsByName("locality")[0].value;
-    var organization = document.getElementsByName("organization")[0].value;
-    var orgunit = document.getElementsByName("orgunit")[0].value;
-    var cname = document.getElementsByName("cname")[0].value;
-    var email = document.getElementsByName("email")[0].value;
-    var key_name = cname + '.key';
-    var csr_name = cname + '.csr';
-    cmd_str = 'openssl req -new -nodes -sha256 -newkey rsa:2048 -keyout ' + key_name + ' -out ' + csr_name + ' -subj "/emailAddress=' + email + '/CN=' + cname + '/O=' + organization + '/OU=' + orgunit + '/C=' + country + '/ST=' + province + '/L=' + locality + '"';
-    document.getElementsByName("cmd_text")[0].value = cmd_str ;
+  var country = document.getElementsByName("country")[0].value;
+  var province = document.getElementsByName("province")[0].value;
+  var locality = document.getElementsByName("locality")[0].value;
+  var organization = document.getElementsByName("organization")[0].value;
+  var orgunit = document.getElementsByName("orgunit")[0].value;
+  var cname = document.getElementsByName("cname")[0].value;
+  var email = document.getElementsByName("email")[0].value;
+  var key_name = cname + '.key';
+  var csr_name = cname + '.csr';
+  cmd_str = 'openssl req -new -nodes -sha256 -newkey rsa:2048 -keyout ' + key_name + ' -out ' + csr_name + ' -subj "/emailAddress=' + email + '/CN=' + cname + '/O=' + organization + '/OU=' + orgunit + '/C=' + country + '/ST=' + province + '/L=' + locality + '"';
+  document.getElementsByName("cmd_text")[0].value = cmd_str ;
 }
 </script>
 </head>

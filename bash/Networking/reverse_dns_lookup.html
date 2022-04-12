@@ -11,13 +11,13 @@
 
 <script type="text/javascript">
 function show_cmd() {
-    var ip_ad = document.getElementsByName("ip_addr")[0].value ;
-    if (validate_ip_addr(ip_ad)) {
-      cmd_str = 'dig +noall +answer -x ' + ip_ad;
-    } else {
+  var ip_ad = document.getElementsByName("ip_addr")[0].value.trim() ;
+  if (validate_ip_addr(ip_ad)) {
+    cmd_str = 'dig +noall +answer -x ' + ip_ad;
+  } else {
       cmd_str = "Input must be an IP address";
-    }
-    document.getElementsByName("cmd_text")[0].value = cmd_str ;
+  }
+  document.getElementsByName("cmd_text")[0].value = cmd_str ;
 }
 </script>
 </head>

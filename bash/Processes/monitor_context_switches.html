@@ -11,13 +11,13 @@
 
 <script type="text/javascript">
 function show_cmd() {
-    var pid_num = document.getElementsByName("pid_number")[0].value ;
-    if (isNaN(pid_num)) {
-      cmd_str = "Pid must be number";
-    } else {
-        cmd_str = 'watch -n.5 grep ctxt /proc/' + pid_num + '/status';
-    }
-    document.getElementsByName("cmd_text")[0].value = cmd_str ;
+  var pid_num = document.getElementsByName("pid_number")[0].value.trim() ;
+  if (isNaN(pid_num) || pid_num === "") {
+    cmd_str = "Pid must be number";
+  } else {
+      cmd_str = 'watch -n.5 grep ctxt /proc/' + pid_num + '/status';
+  }
+  document.getElementsByName("cmd_text")[0].value = cmd_str ;
 }
 </script>
 </head>

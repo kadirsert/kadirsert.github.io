@@ -11,11 +11,11 @@
 
 <script type="text/javascript">
 function show_cmd() {
-  var file_pth = document.getElementsByName("file_path")[0].value.trim() ;
-  if (file_pth === "") {
-    cmd_str = "File path can not be empty";
+  var disk_nm = document.getElementsByName("disk_name")[0].value.trim() ;
+  if (disk_nm === "") {
+    cmd_str = "Disk name can not be empty";
   } else {
-    cmd_str = 'cat ' + file_pth + ' |grep -v "^[[:blank:]]*#" |grep -v "^[[:blank:]]*$"';
+      cmd_str = 'lsblk -io KNAME,TYPE,SIZE,MODEL,SERIAL,VENDOR,REV,STATE |grep "disk" |grep -w ' + disk_nm;
   }
   document.getElementsByName("cmd_text")[0].value = cmd_str ;
 }
@@ -26,16 +26,16 @@ function show_cmd() {
 </br>
 <div class="container-fluid">
 <div class="row">
-  <div class="col-sm"><h2>Show only uncommented lines from a given file</h2></div>
+  <div class="col-sm"><h2>Get Disk Info with some detail</h2></div>
 </div></br>
 <div class="row">
-  <div class="col-sm">cat <span style="color: #80a77d;"><b>&lt;file_path&gt;</b></span> |grep -v "^[[:blank:]]*#" |grep -v "^[[:blank:]]*$"</div>
+  <div class="col-sm">lsblk -io KNAME,TYPE,SIZE,MODEL,SERIAL,VENDOR,REV,STATE |grep "disk" |grep -w <span style="color: #80a77d;"><b>&lt;disk_name&gt;</b></span></div>
 </div></br>
 <div class="input-group input-group-lg">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-lg">File Path:</span>
+    <span class="input-group-text" id="inputGroup-sizing-lg">Disk Name (e.g: sda):</span>
   </div>
-  <input type="text" maxlength=80 name="file_path" class="form-control" aria-label="path" aria-describedby="inputGroup-sizing-sm">
+  <input type="text" maxlength=10 name="disk_name" class="form-control" aria-label="Disk" aria-describedby="inputGroup-sizing-sm">
 </div></br>
 
 <div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
@@ -48,7 +48,7 @@ function show_cmd() {
     <input type="button" class="btn btn-info btn-lg" data-toggle="tooltip" data-placement="bottom" title="Copy Command to Clipboard" value="Copy" onclick="javascript:copy_to_clip();">
   </div>
 </div></br></br>
-<a href="/bash/Strings" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"></span> <h5>Back</h5></a>
+<a href="/bash/Disk" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"></span> <h5>Back</h5></a>
 </div>
 
 </body>
