@@ -24,6 +24,9 @@ function show_cmd() {
 <div class="row">
   <div class="col-sm"><h2>Show only uncommented lines from a given file</h2></div>
 </div></br>
+<div class="row">
+  <div class="col-sm">cat <span style="color: #80a77d;"><b>&lt;file_path&gt;</b></span> |grep -v "^[[:blank:]]*#" |grep -v "^[[:blank:]]*$"</div>
+</div></br>
 <div class="input-group input-group-lg">
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-lg">File Path:</span>
