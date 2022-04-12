@@ -11,11 +11,17 @@
 
 <script type="text/javascript">
 function show_cmd() {
-  var ip_ad = document.getElementsByName("ip_addr")[0].value.trim();
-  if (validate_ip_addr(ip_ad)) {
-    cmd_str = 'dig +noall +answer -x ' + ip_ad;
+  var dest = document.getElementsByName("destination")[0].value.trim();
+  var via = document.getElementsByName("gwip")[0].value.trim();
+  var dev = document.getElementsByName("device")[0].value.trim();
+  if (dest === "" || via === "" || dev === "") {
+    cmd_str = "Inputs can not be empty";
   } else {
-      cmd_str = "Input must be an IP address";
+      if (validate_ip_addr(via)) {
+        cmd_str = 'ip route add ' + dest + ' via ' + via + ' dev ' + dev;
+      } else {
+          cmd_str = "Gateway must be an IP address";
+      }
   }
   document.getElementsByName("cmd_text")[0].value = cmd_str;
 }
@@ -26,17 +32,32 @@ function show_cmd() {
 </br>
 <div class="container-fluid">
 <div class="row">
-  <div class="col-sm"><h2>Reverse DNS Lookup of a given IP</h2></div>
+  <div class="col-sm"><h2>Add static ip route</h2></div>
 </div></br>
 <div class="row">
-  <div class="col-sm">dig +noall +answer -x <span style="color: #80a77d;"><b>&lt;ip_address&gt;</b></span></div>
+  <div class="col-sm">ip route add <span style="color: #80a77d;"><b>&lt;network/mask&gt;</b></span> via <span style="color: #80a77d;"><b>&lt;gw_ip&gt;</b></span> dev <span style="color: #80a77d;"><b>&lt;device&gt;</b></span></div>
+  </div>
 </div></br>
+<div class="input-group input-group-lg">    
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">Destination (NETWORK/MASK)</span>
+  </div>
+  <input type="text" maxlength=2 name="destination" class="form-control" aria-label="destination" aria-describedby="inputGroup-sizing-sm">    
+</div></br>
+
 <div class="input-group input-group-lg">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-lg">IP:</span>
+    <span class="input-group-text" id="inputGroup-sizing-lg">Gateway IP</span>
   </div>
-  <input type="text" maxlength=15 name="ip_addr" class="form-control" aria-label="IPAddr" aria-describedby="inputGroup-sizing-sm">
+  <input type="text" maxlength=40 name="gwip" class="form-control" aria-label="gwip" aria-describedby="inputGroup-sizing-sm">
 </div></br>
+
+<div class="input-group input-group-lg">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-lg">Device</span>
+    </div>
+    <input type="text" maxlength=40 name="device" class="form-control" aria-label="device" aria-describedby="inputGroup-sizing-sm">
+  </div></br>
 
 <div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
   <input class="form-control" style="background-color: #b4deb1;" type="text" name="cmd_text" id="cmd_text" readonly aria-label="Command" aria-describedby="inputGroup-sizing-sm">

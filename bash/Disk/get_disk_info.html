@@ -11,13 +11,13 @@
 
 <script type="text/javascript">
 function show_cmd() {
-  var disk_nm = document.getElementsByName("disk_name")[0].value.trim() ;
+  var disk_nm = document.getElementsByName("disk_name")[0].value.trim();
   if (disk_nm === "") {
     cmd_str = "Disk name can not be empty";
   } else {
       cmd_str = 'lsblk -io KNAME,TYPE,SIZE,MODEL,SERIAL,VENDOR,REV,STATE |grep "disk" |grep -w ' + disk_nm;
   }
-  document.getElementsByName("cmd_text")[0].value = cmd_str ;
+  document.getElementsByName("cmd_text")[0].value = cmd_str;
 }
 </script>
 </head>

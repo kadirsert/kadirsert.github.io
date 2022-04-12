@@ -11,13 +11,13 @@
 
 <script type="text/javascript">
 function show_cmd() {
-  var file_pth = document.getElementsByName("file_path")[0].value.trim() ;
+  var file_pth = document.getElementsByName("file_path")[0].value.trim();
   if (file_pth === "") {
     cmd_str = "File path can not be empty";
   } else {
     cmd_str = 'cat ' + file_pth + ' |grep -v "^[[:blank:]]*#" |grep -v "^[[:blank:]]*$"';
   }
-  document.getElementsByName("cmd_text")[0].value = cmd_str ;
+  document.getElementsByName("cmd_text")[0].value = cmd_str;
 }
 </script>
 </head>

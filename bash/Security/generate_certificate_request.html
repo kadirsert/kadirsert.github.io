@@ -21,7 +21,7 @@ function show_cmd() {
   var key_name = cname + '.key';
   var csr_name = cname + '.csr';
   cmd_str = 'openssl req -new -nodes -sha256 -newkey rsa:2048 -keyout ' + key_name + ' -out ' + csr_name + ' -subj "/emailAddress=' + email + '/CN=' + cname + '/O=' + organization + '/OU=' + orgunit + '/C=' + country + '/ST=' + province + '/L=' + locality + '"';
-  document.getElementsByName("cmd_text")[0].value = cmd_str ;
+  document.getElementsByName("cmd_text")[0].value = cmd_str;
 }
 </script>
 </head>
