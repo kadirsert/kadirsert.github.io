@@ -32,7 +32,18 @@ function show_cmd() {
 <div class="row">
   <div class="col-sm"><h2>Generate SSL CSR and Key Noninteractively</h2></div>
 </div></br>
-
+<div class="row">
+  <div class="col-sm">openssl req -new -nodes -sha256 -newkey rsa:2048 -keyout <span style="color: #80a77d;"><b>&lt;key_name&gt;</b></span> 
+    -out <span style="color: #80a77d;"><b>&lt;csr_name&gt;</b></span> 
+    -subj "/emailAddress=<span style="color: #80a77d;"><b>&lt;email&gt;</b></span> 
+    /CN=<span style="color: #80a77d;"><b>&lt;cname&gt;</b></span>
+    /O=<span style="color: #80a77d;"><b>&lt;organization&gt;</b></span>
+    /OU=<span style="color: #80a77d;"><b>&lt;org_unit&gt;</b></span>
+    /C=<span style="color: #80a77d;"><b>&lt;country&gt;</b></span>
+    /ST=<span style="color: #80a77d;"><b>&lt;province&gt;</b></span>
+    /L=<span style="color: #80a77d;"><b>&lt;locality&gt;</b></span>"</div>
+  </div>
+</div></br>
 <div class="input-group input-group-lg">    
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-lg">Country Name(2 letter code)</span>
