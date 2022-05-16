@@ -1,58 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>NetApp Storage LUN Serial Number to WWID Converter</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=0.6">
-<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6710021794174728" crossorigin="anonymous"></script>
-<script src="/js/common.js"></script>
+  <title>NetApp Storage LUN Serial Number to WWID Converter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.6" />
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6710021794174728"
+    crossorigin="anonymous"></script>
+  <script src="/js/common.js"></script>
 
-<script type="text/javascript">
-function show_wwid() {
-    var sn = document.getElementsByName("serial_number")[0].value ;
+  <script type="text/javascript">
+    function show_wwid() {
+      var sn = document.getElementsByName("serial_number")[0].value;
 
-    var wwid = "360a98000" ;
-    for (var i=0; i < sn.length; i++) { wwid = wwid + sn.charCodeAt(i).toString(16) ; } ;
-    document.getElementsByName("ww7m")[0].value = wwid ;
+      var wwid = "360a98000";
+      for (var i = 0; i < sn.length; i++) { wwid = wwid + sn.charCodeAt(i).toString(16); };
+      document.getElementsByName("ww7m")[0].value = wwid;
 
-    var wwid = "3600a0980" ;
-    for (var i=0; i < sn.length; i++) { wwid = wwid + sn.charCodeAt(i).toString(16) ; } ;
-    document.getElementsByName("wwcm")[0].value = wwid ;
-}
-</script>
+      var wwid = "3600a0980";
+      for (var i = 0; i < sn.length; i++) { wwid = wwid + sn.charCodeAt(i).toString(16); };
+      document.getElementsByName("wwcm")[0].value = wwid;
+    }
+  </script>
 </head>
+
 <body>
 
-</br>
-<div class="container-fluid">
-<div class="row">
-  <div class="col-sm"><h2>NetApp Storage LUN Serial Number to WWID Converter</h2></div>
-</div></br>
-<div class="input-group input-group-lg">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-lg">Serial Number:</span>
-  </div>
-  <input type="text" maxlength=12 name="serial_number" class="form-control" aria-label="Serial" aria-describedby="inputGroup-sizing-sm">
-</div></br>
-<div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
-  <div class="input-group-prepend" style="background-color: #b4deb1;">
-    <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">WWID 7-Mode:</span>
-  </div>
-  <input type="text" name="ww7m" readonly class="form-control" style="background-color: #b4deb1;" aria-label="ww7m" aria-describedby="inputGroup-sizing-sm">
-</div>
-<div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
-  <div class="input-group-prepend" style="background-color: #b4deb1;">
-    <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">WWID C-Mode:</span>
-  </div>
-  <input type="text" name="wwcm" readonly class="form-control" style="background-color: #b4deb1;" aria-label="wwcm" aria-describedby="inputGroup-sizing-sm">
-</div></br>
-<div class="row">
-  <div class="col-sm"><input type="button" class="btn btn-info btn-lg" value="Show WWID" onclick="javascript:show_wwid();"></div>
-</div></br>
-<a href="/" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"></span> <h5>Tools Home</h5></a>
-</div></br>
+  </br>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm">
+        <h2>NetApp Storage LUN Serial Number to WWID Converter</h2>
+      </div>
+    </div></br>
+    <div class="input-group input-group-lg">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-lg">Serial Number:</span>
+      </div>
+      <input type="text" maxlength=12 name="serial_number" class="form-control" aria-label="Serial"
+        aria-describedby="inputGroup-sizing-sm">
+    </div></br>
+    <div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
+      <div class="input-group-prepend" style="background-color: #b4deb1;">
+        <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">WWID 7-Mode:</span>
+      </div>
+      <input type="text" name="ww7m" readonly class="form-control" style="background-color: #b4deb1;" aria-label="ww7m"
+        aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
+      <div class="input-group-prepend" style="background-color: #b4deb1;">
+        <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">WWID C-Mode:</span>
+      </div>
+      <input type="text" name="wwcm" <!DOCTYPE html>
+      <html lang="en">
+      
+      <head>
+        <title>NetApp Storage LUN Serial Number to WWID Converter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.6" />
+        <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6710021794174728"
+          crossorigin="anonymous"></script>
+        <script src="/js/common.js"></script>
+      
+        <script type="text/javascript">
+          function show_wwid() {
+            var sn = document.getElementsByName("serial_number")[0].value;
+      
+            var wwid = "360a98000";
+            for (var i = 0; i < sn.length; i++) { wwid = wwid + sn.charCodeAt(i).toString(16); };
+            document.getElementsByName("ww7m")[0].value = wwid;
+      
+            var wwid = "3600a0980";
+            for (var i = 0; i < sn.length; i++) { wwid = wwid + sn.charCodeAt(i).toString(16); };
+            document.getElementsByName("wwcm")[0].value = wwid;
+          }
+        </script>
+      </head>
+      
+      <body>
+      
+        </br>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm">
+              <h2>NetApp Storage LUN Serial Number to WWID Converter</h2>
+            </div>
+          </div></br>
+          <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-lg">Serial Number:</span>
+            </div>
+            <input type="text" maxlength=12 name="serial_number" class="form-control" aria-label="Serial"
+              aria-describedby="inputGroup-sizing-sm">
+          </div></br>
+          <div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
+            <div class="input-group-prepend" style="background-color: #b4deb1;">
+              <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">WWID 7-Mode:</span>
+            </div>
+            <input type="text" name="ww7m" readonly class="form-control" style="background-color: #b4deb1;" aria-label="ww7m"
+              aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
+            <div class="input-group-prepend" style="background-color: #b4deb1;">
+              <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">WWID C-Mode:</span>
+            </div>
+            <input type="text" name="wwcm" readonly class="form-control" style="background-color: #b4deb1;" aria-label="wwcm"
+              aria-describedby="inputGroup-sizing-sm">
+          </div></br>
+          <div class="row">
+            <div class="col-sm"><input type="button" class="btn btn-info btn-lg" value="Show WWID"
+                onclick="javascript:show_wwid();"></div>
+          </div></br>
+          <a href="/" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"></span>
+            <h5>Tools Home</h5>
+          </a>
+        </div></br>
+      
+      </body>
+      
+      </html>
+      <div class="col-sm"><input type="button" class="btn btn-info btn-lg" value="Show WWID"
+          onclick="javascript:show_wwid();"></div>
+    </div></br>
+    <a href="/" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"></span>
+      <h5>Tools Home</h5>
+    </a>
+  </div></br>
 
 </body>
+
 </html>
+

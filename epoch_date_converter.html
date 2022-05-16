@@ -1,83 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>Convert Epoch-Date Date-Epoch</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=0.6">
-<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6710021794174728" crossorigin="anonymous"></script>
-<script src="/js/common.js"></script>
 
-<script type="text/javascript">
-function show_hrdate() {
-    var ts = document.getElementsByName("time_stamp1")[0].value;
-    var ts1000 = new Date(ts*1000);
-	var hrdategmt = ts1000.toGMTString();
-	var hrdatelocale = ts1000.toLocaleString();
-	
-	document.getElementsByName("hr_date_gmt1")[0].value = hrdategmt;
-	document.getElementsByName("hr_date_locale1")[0].value = hrdatelocale;
-}
-function show_timestamp() {
-    var hrdateloc = document.getElementsByName("hr_date_ltz")[0].value;
-    var hrdatelocale = new Date(hrdateloc);
-	var ts = hrdatelocale.getTime()/1000.0;
-	
-	document.getElementsByName("time_stamp2")[0].value = ts;
-}
-</script>
+<head>
+  <title>Convert Epoch-Date Date-Epoch</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.6" />
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6710021794174728"
+    crossorigin="anonymous"></script>
+  <script src="/js/common.js"></script>
+
+  <script type="text/javascript">
+    function show_hrdate() {
+      var ts = document.getElementsByName("time_stamp1")[0].value;
+      var ts1000 = new Date(ts * 1000);
+      var hrdategmt = ts1000.toGMTString();
+      var hrdatelocale = ts1000.toLocaleString();
+
+      document.getElementsByName("hr_date_gmt1")[0].value = hrdategmt;
+      document.getElementsByName("hr_date_locale1")[0].value = hrdatelocale;
+    }
+    function show_timestamp() {
+      var hrdateloc = document.getElementsByName("hr_date_ltz")[0].value;
+      var hrdatelocale = new Date(hrdateloc);
+      var ts = hrdatelocale.getTime() / 1000.0;
+
+      document.getElementsByName("time_stamp2")[0].value = ts;
+    }
+  </script>
 </head>
+
 <body>
 
-</br>
-<div class="container-fluid">
-<div class="row">
-  <div class="col-sm"><h2>Epoch to Human Readable Date Converter</h2></div>
-</div></br>
-<div class="input-group input-group-lg">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-lg">TimeStamp:</span>
-  </div>
-  <input type="text" name="time_stamp1" class="form-control" aria-label="time_stamp1" aria-describedby="inputGroup-sizing-sm">
-</div></br>
-<div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
-  <div class="input-group-prepend" style="background-color: #b4deb1;">
-    <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">Date GMT:</span>
-  </div>
-  <input type="text" name="hr_date_gmt1" readonly class="form-control" style="background-color: #b4deb1;" aria-label="hr_date_gmt1" aria-describedby="inputGroup-sizing-sm">
-</div>
-<div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
-  <div class="input-group-prepend" style="background-color: #b4deb1;">
-    <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">Date in Your Locale:</span>
-  </div>
-  <input type="text" name="hr_date_locale1" readonly class="form-control" style="background-color: #b4deb1;" aria-label="hr_date_locale1" aria-describedby="inputGroup-sizing-sm">
-</div></br>
-<div class="row">
-  <div class="col-sm"><input type="button" class="btn btn-info btn-lg" value="Show Date" onclick="javascript:show_hrdate();"></div>
-</div></br>
-<hr></br>
+  </br>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm">
+        <h2>Epoch to Human Readable Date Converter</h2>
+      </div>
+    </div></br>
+    <div class="input-group input-group-lg">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-lg">TimeStamp:</span>
+      </div>
+      <input type="text" name="time_stamp1" class="form-control" aria-label="time_stamp1"
+        aria-describedby="inputGroup-sizing-sm">
+    </div></br>
+    <div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
+      <div class="input-group-prepend" style="background-color: #b4deb1;">
+        <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">Date GMT:</span>
+      </div>
+      <input type="text" name="hr_date_gmt1" readonly class="form-control" style="background-color: #b4deb1;"
+        aria-label="hr_date_gmt1" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
+      <div class="input-group-prepend" style="background-color: #b4deb1;">
+        <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">Date in Your
+          Locale:</span>
+      </div>
+      <input type="text" name="hr_date_locale1" readonly class="form-control" style="background-color: #b4deb1;"
+        aria-label="hr_date_locale1" aria-describedby="inputGroup-sizing-sm">
+    </div></br>
+    <div class="row">
+      <div class="col-sm"><input type="button" class="btn btn-info btn-lg" value="Show Date"
+          onclick="javascript:show_hrdate();"></div>
+    </div></br>
+    <hr></br>
 
-<div class="row">
-  <div class="col-sm"><h2>Human Readable Date to Epoch Converter</h2></div>
-</div></br>
-<div class="input-group input-group-lg">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-lg">Date in Your TZ:</span>
-  </div>
-  <input type="text" name="hr_date_ltz" class="form-control" aria-label="hr_date_ltz" aria-describedby="inputGroup-sizing-sm">
-</div></br>
-<div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
-  <div class="input-group-prepend" style="background-color: #b4deb1;">
-    <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">TimeStamp:</span>
-  </div>
-  <input type="text" name="time_stamp2" readonly class="form-control" style="background-color: #b4deb1;" aria-label="time_stamp2" aria-describedby="inputGroup-sizing-sm">
-</div></br>
-<div class="row">
-  <div class="col-sm"><input type="button" class="btn btn-info btn-lg" value="Show TimeStamp" onclick="javascript:show_timestamp();"></div>
-</div></br>
-<a href="/" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"></span> <h5>Tools Home</h5></a>
-</div></br>
+    <div class="row">
+      <div class="col-sm">
+        <h2>Human Readable Date to Epoch Converter</h2>
+      </div>
+    </div></br>
+    <div class="input-group input-group-lg">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-lg">Date in Your TZ:</span>
+      </div>
+      <input type="text" name="hr_date_ltz" class="form-control" aria-label="hr_date_ltz"
+        aria-describedby="inputGroup-sizing-sm">
+    </div></br>
+    <div class="input-group input-group-lg" style="background-color: #b4deb1; position: relative;">
+      <div class="input-group-prepend" style="background-color: #b4deb1;">
+        <span class="input-group-text" style="background-color: #b4deb1;" id="inputGroup-sizing-lg">TimeStamp:</span>
+      </div>
+      <input type="text" name="time_stamp2" readonly class="form-control" style="background-color: #b4deb1;"
+        aria-label="time_stamp2" aria-describedby="inputGroup-sizing-sm">
+    </div></br>
+    <div class="row">
+      <div class="col-sm"><input type="button" class="btn btn-info btn-lg" value="Show TimeStamp"
+          onclick="javascript:show_timestamp();"></div>
+    </div></br>
+    <a href="/" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"></span>
+      <h5>Tools Home</h5>
+    </a>
+  </div></br>
 
 </body>
+
 </html>
+
