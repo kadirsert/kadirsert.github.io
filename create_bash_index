@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import os, os.path
+from bs4 import BeautifulSoup
+import configparser
+
+
+bash_categories = [name for name in os.listdir("./bash/") if os.path.isdir("./bash/" + name)]
+config = configparser.ConfigParser()
+
+f = open('bash/index.html', 'w')
+
+html_template_pre = """<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>SysAdmin's ToolBox</title>
@@ -14,15 +26,29 @@
       <div class="row">
         <div class="col-sm"><h2>Categories of BASH Commands</h2></div>
       </div></br>
-      <div id="toolList" class="list-group">
+"""
+
+html_template_divlist = """      <div id="toolList" class="list-group">
         <input id="inpSearch" onkeyup="searchFunction()" class="form-control" type="text" placeholder="Search">
-        <a href="/bash/Networking/index.html" class="list-group-item list-group-item-action"><h5>Networking</h5></a>
-        <a href="/bash/Disk/index.html" class="list-group-item list-group-item-action"><h5>Disk Management</h5></a>
-        <a href="/bash/Security/index.html" class="list-group-item list-group-item-action"><h5>Security</h5></a>
-        <a href="/bash/Processes/index.html" class="list-group-item list-group-item-action"><h5>Processes</h5></a>
-        <a href="/bash/Strings/index.html" class="list-group-item list-group-item-action"><h5>String/Text Manipulation</h5></a>
-      </div></br>
-    </div>
+"""
+
+html_template_link_list = ""
+
+for category in bash_categories:
+  config.read('bash/' + category + '/' + category + '.cfg')
+  html_template_link_list = html_template_link_list + '        <a href="/bash/' + category + '/index.html" class="list-group-item list-group-item-action"><h5>' \
+                            + config['Main']['title'] + '</h5></a>\n'
+
+html_template_divlist = html_template_divlist + html_template_link_list + '      </div></br>\n'
+
+html_template_post = """    </div>
     <a href="/" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-home"></span> <h5>Tools Home</h5></a>
   </body>
 </html>
+"""
+
+html_template = html_template_pre + html_template_divlist + html_template_post
+
+f.write(html_template)
+f.close()
+

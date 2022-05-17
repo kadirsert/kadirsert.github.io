@@ -42,11 +42,11 @@ html_template_divlist = html_template_divlist + '        <a href="/bash/index.ht
 html_template_link_list = ""
 
 for page in main_html_pages:
-    print(page)
-    with open(page) as fp:
-      soup = BeautifulSoup(fp, 'html.parser')
-    html_template_link_list = html_template_link_list + '        <a href="/' + page + '" class="list-group-item list-group-item-action"><h5>' \
-                              + soup.title.string + '</h5></a>\n'
+  print(page)
+  with open(page) as fp:
+    soup = BeautifulSoup(fp, 'html.parser')
+  html_template_link_list = html_template_link_list + '        <a href="/' + page + '" class="list-group-item list-group-item-action"><h5>' \
+                            + soup.title.string + '</h5></a>\n'
 
 html_template_divlist = html_template_divlist + html_template_link_list + '      </div>\n'
 
